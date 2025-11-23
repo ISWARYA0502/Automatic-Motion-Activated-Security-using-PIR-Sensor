@@ -60,10 +60,40 @@ Step 7: Save Your Work
 
 
 # Code:
+    int pirsensor = 0;
+
+    void setup()
+    {
+     pinMode(A0, INPUT);
+     Serial.begin(9600);
+     pinMode(7, OUTPUT);
+     pinMode(6, OUTPUT);
+        pinMode(10, OUTPUT);
+     pinMode(10, OUTPUT);
+    }
+
+    void loop()
+    {
+     pirsensor = analogRead(A0);
+     Serial.println(pirsensor);
+     if (pirsensor >= 100) {
+    digitalWrite(7, LOW);
+    digitalWrite(6, HIGH);
+    tone(10, 92, 100); 
+     } else {
+    digitalWrite(7, HIGH);
+    digitalWrite(6, LOW);
+    digitalWrite(10, LOW);
+     }
+     delay(10); 
+    }  
 
 
 
 # Output:
+
+<img width="1011" height="491" alt="image" src="https://github.com/user-attachments/assets/94c3ae7c-6fcb-46f1-9eab-ac0295878bd8" />
+
 
 
 
